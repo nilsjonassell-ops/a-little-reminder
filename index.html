@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070B18">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>A Little Reminder ⭐</title>
+  <meta name="description" content="Eine kleine Überraschung und ein kleiner Reminder für dich. ❤️">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Link-Vorschau (WhatsApp, iMessage, Telegram …)
+       og:image und og:url brauchen eine VOLLSTÄNDIGE Adresse.
+       USERNAME durch deinen GitHub-Benutzernamen ersetzen (siehe README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="A Little Reminder">
+  <meta property="og:title" content="A Little Reminder ⭐">
+  <meta property="og:description" content="Eine kleine Überraschung und ein kleiner Reminder für dich. ❤️">
+  <meta property="og:url" content="https://nilsjonassell-ops.github.io/a-little-reminder/">
+  <meta property="og:image" content="https://nilsjonassell-ops.github.io/a-little-reminder/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ein ruhiger Nachthimmel mit Sternen und dem Schriftzug A Little Reminder">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+  <!-- Himmel: Nebel (CSS) + Sterne & Sternschnuppen (Canvas) -->
+  <div class="sky" aria-hidden="true">
+    <div class="nebula nebula--a"></div>
+    <div class="nebula nebula--b"></div>
+    <canvas id="stars" class="stars"></canvas>
+    <div class="vignette"></div>
+  </div>
+
+  <main class="stage" id="stage">
+    <!-- Szenen 1–3 -->
+    <section class="intro" id="intro" aria-label="Begrüßung">
+      <h1 class="hello fade" id="hello">Hey, du.</h1>
+      <p class="subline fade" id="subline">Ich wollte dir etwas schicken …</p>
+
+      <div class="star-wrap">
+        <button class="wish-star" id="wishStar" type="button" disabled
+                aria-label="Stern antippen, um die Nachricht zu öffnen">
+          <span class="wish-star__core" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <p class="hint fade" id="hint" aria-hidden="true">Tippe auf den Stern.</p>
+    </section>
+
+    <!-- Szene 4–5: Die Nachricht, direkt über dem Himmel -->
+    <section class="message" id="message" aria-label="Nachricht" hidden>
+      <div class="message__text" id="messageText" tabindex="-1">
+        <p class="line line--lead">Diese kleine Website hat genau einen Zweck:</p>
+        <p class="line">Dich daran zu erinnern, dass du dich ausruhen sollst.</p>
+        <p class="line">Dass du genug trinken sollst.</p>
+        <p class="line">Dass du dir eine Wärmflasche machen sollst.</p>
+        <p class="line">Und dass du bitte ganz schnell wieder gesund werden sollst.</p>
+        <p class="line line--pause">Mehr wollte ich eigentlich gar nicht.</p>
+        <p class="line line--smile">Okay, vielleicht noch ein kleines Lächeln.&nbsp;❤️</p>
+      </div>
+
+      <footer class="outro">
+        <p class="line line--signoff">Take care.&nbsp;❤️</p>
+        <button class="replay line" id="replay" type="button">Nochmal ansehen</button>
+      </footer>
+    </section>
+  </main>
+
+  <noscript>
+    <div class="noscript">
+      <p>Hey, du.</p>
+      <p>Diese kleine Website hat genau einen Zweck: Dich daran zu erinnern, dass du dich ausruhen sollst. Dass du genug trinken sollst. Dass du dir eine Wärmflasche machen sollst. Und dass du bitte ganz schnell wieder gesund werden sollst.</p>
+      <p>Mehr wollte ich eigentlich gar nicht. Okay, vielleicht noch ein kleines Lächeln. ❤️</p>
+    </div>
+  </noscript>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
